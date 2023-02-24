@@ -1,0 +1,6 @@
+.header {
+	height: 50vh;
+	background-image: url(../assets/download.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
