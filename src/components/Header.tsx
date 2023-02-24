@@ -1,4 +1,3 @@
-import { Container } from '@mui/material';
 import styles from './Header.module.css'
 
 const Header = () => (

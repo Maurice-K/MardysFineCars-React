@@ -4,7 +4,7 @@ import Car from './Car';
 const Cars = ({ cars }: any) => {
 	const renderedCars = cars.map((car: any) => {
 		return (
-			<Grid item xs={2} md={3} key={car.id}>
+			<Grid item xs={6} md={3} key={car.id}>
 				<Car car={car} />
 			</Grid>
 		);
@@ -15,7 +15,7 @@ const Cars = ({ cars }: any) => {
 			No cars
 		</Typography>
 	) : (
-		<Grid container spacing={4}>
+		<Grid container justifyContent="space-evenly"	spacing={4}>
 			{renderedCars}
 		</Grid>
 	);

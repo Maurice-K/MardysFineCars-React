@@ -45,6 +45,12 @@ const Car = ({ car }: CarProps) => {
 	const onSubmitDealJacket = (event: any) => {
 		event.preventDefault();
 		console.log(dealJacketInputs);
+		setOpenModal(false);
+		setDealJacketInputs({
+			firstName: '',
+			lastName: '',
+			phoneNumber: '',
+		})
 	};
 
 	const onDealJacketChange = (event: any) => {
@@ -59,18 +65,15 @@ const Car = ({ car }: CarProps) => {
 	return (
 		<>
 			<Card>
-				<CardMedia
-					component='img'
-					height='140'
-					image='/static/images/cards/contemplative-reptile.jpg'
-					alt='green iguana'
-				/>
 				<CardContent>
-					<Typography gutterBottom variant='h5' component='div'>
+					<Typography gutterBottom variant='h5'>
 						{car.brand}
 					</Typography>
 					<Typography variant='body2' color='text.secondary'>
-						{car.price}
+						Price: {car.price}
+					</Typography>
+					<Typography variant='body2' color='text.secondary'>
+						Mileage: {car.mileage}
 					</Typography>
 				</CardContent>
 				<CardActions>
