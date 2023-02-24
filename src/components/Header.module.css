@@ -1,6 +1,7 @@
 .header {
-	height: 50vh;
-	background-image: url(../assets/download.png);
+	height: 65vh;
+	background-image: url(../assets/mardys_fine_cars_background_1_3840x2160.jpeg);
 	background-size: contain;
 	background-repeat: no-repeat;
+  background-position: center;
 }
