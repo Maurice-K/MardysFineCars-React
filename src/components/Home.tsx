@@ -1,6 +1,5 @@
 import Calculator from './Calculator'
 import Cars from './Cars';
-import { Stack } from '@mui/material';
 import useCars from '../hooks/useCars'
 import { useState } from 'react';
 import Header from './Header';
@@ -22,11 +21,11 @@ function Home() {
 	};
 
 	return (
-		<Stack>
+		<>
 			<Header />
 			<Calculator onSubmitCash={getCarListByPrice} />
 			<Cars cars={filteredCars} />
-		</Stack>
+		</>
 	);
 }
 
