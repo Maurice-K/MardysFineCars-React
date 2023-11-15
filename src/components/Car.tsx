@@ -2,12 +2,10 @@ import {
 	Button,
 	Card,
 	CardActions,
-	CardContent,
-	CardMedia,
-	Modal,
+	CardContent, Modal,
 	Typography,
 	Box,
-	TextField,
+	TextField
 } from '@mui/material';
 import { useState } from 'react';
 
@@ -89,7 +87,7 @@ const Car = ({ car }: CarProps) => {
 						This {car.brand} is almost yours!
 					</Typography>
 
-					<form onSubmit={onSubmitDealJacket}>
+					<form onSubmit={onSubmitDealJacket} i>
 						<TextField
 							label='First Name'
 							name='firstName'
