@@ -10,7 +10,9 @@ function Home() {
 
 	console.log(cars);
 
-	const getCarListByPrice = (cash: number) => {
+	const getCarListByPrice = async (cash: number) => {
+		const result  = await fetch(`http://localhost:8000/car/${cash}`);
+		console.log(result);
 		setFilteredCars(
 			cars
 				.filter((car: any) => car.price <= cash)

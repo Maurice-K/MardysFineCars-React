@@ -35,6 +35,11 @@ const AdminDealJackets = () => {
 		{ id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
 		{ id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 	];
+	
+
+	const uploadInventory = () => {
+
+	}
 
 	return (
 		<Stack alignItems='center' justifyContent='center' spacing={3}>
