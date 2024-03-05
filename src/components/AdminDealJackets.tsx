@@ -1,8 +1,13 @@
-import { Button, Stack } from '@mui/material';
+import { Button, Input, Stack } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import { FileUploadOutlined } from '@mui/icons-material';
+import { useState } from 'react';
 
 const AdminDealJackets = () => {
+	const [file, setFile] = useState<any>(null);
+
+
+
 	const columns = [
 		{ field: 'id', headerName: 'ID', width: 70 },
 		{ field: 'firstName', headerName: 'First name', width: 130 },
@@ -35,9 +40,29 @@ const AdminDealJackets = () => {
 		{ id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
 		{ id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 	];
-	
 
-	const uploadInventory = () => {
+
+	const handleFileChange = (event: any) => {
+		console.log(event.target.files)
+    setFile(event.target.files[0]);
+  };
+
+
+
+	const uploadInventory = async (event: any) => {
+		event.preventDefault();
+		console.log(event.target);
+
+		const formData = new FormData();
+		formData.append( "file", file );
+		const response = await fetch('http://localhost:8000/uploadfile/', {
+			method: 'POST',
+			headers: {
+				'accept': 'application/json',
+			},
+			body: formData
+		})
+		return await response.json();
 
 	}
 
@@ -52,9 +77,11 @@ const AdminDealJackets = () => {
 					checkboxSelection
 				/>
 			</div>
-			<Button>
-				<FileUploadOutlined fontSize='large' />
-			</Button>
+			<form onSubmit={uploadInventory} encType="multipart/form-data" >
+				<Input type="file" id="file" onChange={handleFileChange} />
+
+				<Button type='submit' value="Upload File" >Upload File</Button>
+			</form>
 		</Stack>
 	);
 };

@@ -33,18 +33,15 @@ const Login = () => {
       console.error(error)
     }
 
-
-
   }
 
-
-  return <>
+  return (<>
     <form onSubmit={(event) => submitLogin(event)}>
       <TextField label="User Name" name="username" value={loginCredentials.username} onChange={onFormChange} />
       <TextField type="password" label="Password" name="password" value={loginCredentials.password} onChange={onFormChange} />
       <Button value="submit" type="submit">Submit</Button>
     </form>
-  </>
+  </>)
 }
 
 
