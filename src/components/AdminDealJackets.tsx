@@ -1,6 +1,5 @@
-import { Button, Input, Stack } from '@mui/material';
+import { Button, Input, Stack, TextField } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import { FileUploadOutlined } from '@mui/icons-material';
 import { useState } from 'react';
 
 const AdminDealJackets = () => {
@@ -72,13 +71,14 @@ const AdminDealJackets = () => {
 				<DataGrid
 					rows={rows}
 					columns={columns}
-					pageSize={5}
-					rowsPerPageOptions={[5]}
+					rowsPerPageOptions={[5, 10, 15]}
 					checkboxSelection
 				/>
 			</div>
-			<form onSubmit={uploadInventory} encType="multipart/form-data" >
-				<Input type="file" id="file" onChange={handleFileChange} />
+			<form onSubmit={uploadInventory} encType="multipart/form-data">
+				<Input type="file" id="file" inputProps={{
+					accept: ".csv"
+				}} onChange={handleFileChange} />
 
 				<Button type='submit' value="Upload File" >Upload File</Button>
 			</form>
