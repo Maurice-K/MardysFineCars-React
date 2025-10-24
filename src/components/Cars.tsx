@@ -11,7 +11,9 @@ const Cars = ({ cars }: any) => {
       No cars
     </Title>
   ) : (
-    <SimpleGrid cols={4}>{renderedCars}</SimpleGrid>
+    <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} mx={100}>
+      {renderedCars}
+    </SimpleGrid>
   );
 };
 

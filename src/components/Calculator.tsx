@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styles from './Calculator.module.css';
-import { Button, Container, Stack, TextInput } from '@mantine/core';
+import classes from './Calculator.module.css';
+import { Box, Button, Container, Stack, TextInput } from '@mantine/core';
 
 interface CalculatorProps {
   onSubmitCash: (number: number) => void;
@@ -15,26 +15,26 @@ const Calculator = ({ onSubmitCash }: CalculatorProps) => {
   };
 
   return (
-    <div className={styles.formWrapper}>
+    <Box className={classes.formWrapper}>
       <form onSubmit={onSubmitCashOnHand} className="calculator">
         <Container size="sm">
           <Stack>
             <TextInput
-              label="Enter price here"
+              placeholder="Enter price here"
               type="number"
-              variant="outlined"
+              radius="md"
               value={cash}
               onChange={(e) => {
                 setCash(e.target.value);
               }}
             />
-            <Button variant="filled" onClick={onSubmitCashOnHand}>
+            <Button variant="filled" onClick={onSubmitCashOnHand} color="red">
               Find My Car
             </Button>
           </Stack>
         </Container>
       </form>
-    </div>
+    </Box>
   );
 };
 

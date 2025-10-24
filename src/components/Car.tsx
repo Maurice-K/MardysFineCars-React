@@ -139,7 +139,7 @@ const Car = ({ car }: CarProps) => {
               </Text>
             </div>
 
-            <Button radius="xl" style={{ flex: 1 }} onClick={open}>
+            <Button radius="xl" style={{ flex: 1 }} onClick={open} color="red">
               Rent now
             </Button>
           </Group>
