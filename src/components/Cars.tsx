@@ -1,24 +1,18 @@
-import { Grid, Typography } from '@mui/material';
 import Car from './Car';
+import { SimpleGrid, Text, Title } from '@mantine/core';
 
 const Cars = ({ cars }: any) => {
-	const renderedCars = cars.map((car: any) => {
-		return (
-			<Grid item xs={6} md={3} key={car.id}>
-				<Car car={car} />
-			</Grid>
-		);
-	});
+  const renderedCars = cars.map((car: any) => {
+    return <Car car={car} key={car.id} />;
+  });
 
-	return renderedCars.length === 0 ? (
-		<Typography variant='h1' textAlign='center'>
-			No cars
-		</Typography>
-	) : (
-		<Grid container justifyContent="space-evenly"	spacing={4}>
-			{renderedCars}
-		</Grid>
-	);
+  return renderedCars.length === 0 ? (
+    <Title order={2} ta="center">
+      No cars
+    </Title>
+  ) : (
+    <SimpleGrid cols={4}>{renderedCars}</SimpleGrid>
+  );
 };
 
 export default Cars;
